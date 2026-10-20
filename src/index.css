@@ -49,18 +49,16 @@ ul {
   padding: 0 20px;
 }
 
-/* Scrollbar Customization */
+/* Hide Scrollbar Completely */
 ::-webkit-scrollbar {
-  width: 8px;
+  display: none;
+  width: 0;
+  height: 0;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--bg-color);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--accent-color);
-  border-radius: 4px;
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 /* Animations */
@@ -115,4 +113,74 @@ ul {
 .btn-outline:hover {
   background: var(--text-main);
   color: var(--bg-color);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  /* Navbar */
+  .navbar .nav-content {
+    flex-direction: column;
+    padding: 15px 0;
+    gap: 15px;
+  }
+  .navbar .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .navbar .nav-auth {
+    width: 100%;
+    justify-content: center;
+  }
+  .navbar .nav-auth .btn {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  /* Hero Section */
+  .hero-text h1 {
+    font-size: 50px !important;
+  }
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-btns .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Sedes Grid */
+  .sedes-grid {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    gap: 10px !important;
+  }
+  .sedes-grid > div {
+    height: 300px !important;
+    border-radius: 8px;
+  }
+  
+  /* Admin Topbar */
+  .admin-topbar {
+    flex-direction: column;
+    padding: 15px !important;
+    gap: 15px;
+    height: auto !important;
+  }
+  .admin-topbar-left {
+    width: 100%;
+    justify-content: center;
+  }
+  .admin-nav-top {
+    width: 100%;
+    justify-content: center;
+  }
+  .admin-topbar-right {
+    width: 100%;
+    justify-content: center;
+  }
+  .admin-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
 }
